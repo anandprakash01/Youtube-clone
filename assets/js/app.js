@@ -1,12 +1,14 @@
 const menuIcon = document.querySelector(".menu-icon");
 const sidebar = document.querySelector(".sidebar");
 const container = document.querySelector(".container");
+const filters=document.querySelector('.filters');
 
 const videoContainer = document.querySelector('.video-container');
 
 menuIcon.onclick = () => {
     sidebar.classList.toggle("small-sidebar");
     container.classList.toggle('large-container')
+    filters.classList.toggle('filters-large');
 }
 
 // https://www.googleapis.com/youtube/v3/videos?key=AIzaSyC7BBo6iYAoWMdRrL2m0Yc5JsfvWl6Fm0w&part=snippet&chart=mostPopular&maxResult=1&regionCode=IN
@@ -26,7 +28,7 @@ fetch(video_url + new URLSearchParams({
     part: 'snippet',
     chart: 'mostPopular',
     maxResults: 150,
-    // regionCode: 'IN'
+    regionCode: 'IN'
 
 })
 ).then(res => res.json()).then(data => {
@@ -63,8 +65,8 @@ const makeVideoCard = (data) => {
             <img src="${data.channelThumbnail.url}" class="channel-icon" alt="">
             <div class="info">
                 <h4 class="title">${data.snippet.title}</h4>
-                <p class="channel-name">${data.snippet.channelTitle}</p>
-                <p>15k views 2 day</p>
+                <p class="channel-name">${data.snippet.channelTitle}</p><i class="fa-sharp fa-solid fa-circle-check"></i>
+               
             </div>
         </div>
     </div>
