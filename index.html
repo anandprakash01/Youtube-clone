@@ -5,45 +5,109 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Movies App</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script src="./App.js"></script>
+    <title>Youtube Clone</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
 
 </head>
 
 <body>
-    <nav class="nav-bar">
-        <div id="home-logo">
-            <a href="./index.html">My Movies App</a>
+
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="./assets/img/menu.png" alt="" class="menu-icon">
+            <img src="./assets/img/logo.png" alt="" class="logo">
         </div>
-        <div class="nav-search">
-            <button class="btn search-btn">Search</button>
-            <input type="text" id="search" placeholder="Search here...">
+
+        <div class="nav-middle flex-div">
+            <div class="search-box flex-div">
+                <input type="text" name="" class="search" placeholder="Search">
+                <img src="./assets/img/search.png" alt="" class="search-btn">
+            </div>
+            <img src="./assets/img/voice-search.png" alt="" class="mic-icon">
+
+        </div>
+
+        <div class="nav-right flex-div">
+            <img src="./assets/img/upload.png" alt="">
+            <img src="./assets/img/more.png" alt="">
+            <img src="./assets/img/notification.png" alt="">
+            <img src="./assets/img/dp4.jpg" alt="" class="user-icon">
         </div>
     </nav>
-    <div class="horizontal-line"></div>
-    <div class="main-page">
-        <div class="genres-section">
-            <h2>Genres</h2>
-            <div class="genres-types">Action</div>
-            <div class="genres-types">Adventure</div>
-            <div class="genres-types">Comedy</div>
-            <div class="genres-types">Romantic</div>
 
+    <!-- ----------- side-bar---------- -->
 
+    <div class="sidebar">
+        <div class="shortcut-links">
+            <a href=""><img src="./assets/img/home.png" alt="">
+                <p>Home</p>
+            </a>
+            <a href=""><img src="./assets/img/explore.png" alt="">
+                <p>Explore</p>
+            </a>
+            <a href=""><img src="./assets/img/subscriprion.png" alt="">
+                <p>Subscription</p>
+            </a>
+            <a href=""><img src="./assets/img/library.png" alt="">
+                <p>Library</p>
+            </a>
+            <a href=""><img src="./assets/img/history.png" alt="">
+                <p>History</p>
+            </a>
+            <a href=""><img src="./assets/img/playlist.png" alt="">
+                <p>Playlist</p>
+            </a>
+            <a href=""><img src="./assets/img/messages.png" alt="">
+                <p>Messages</p>
+            </a>
+            <a href=""><img src="./assets/img/show more.png" alt="">
+                <p>Show More</p>
+            </a>
+            <hr />
         </div>
-        <div id="movies-container">
-            <!-- <div class="movie-card">
-                <img src="./photo.jpg">
-                <div>Movie Namsse</div>
-                <div class="lang-rating">
-                    <p>En</p>
-                    <p>9.9</p>
+
+        <div class="subscribed-list">
+            <h3>Subscriptions</h3>
+            <a href=""><img src="./assets/img/dp4.jpg" alt="">
+                <p>Photography</p>
+            </a>
+            <a href=""><img src="./assets/img/dp.jpg" alt="">
+                <p>Marvel</p>
+            </a>
+            <a href=""><img src="./assets/img/dp2.jpg" alt="">
+                <p>NDTV</p>
+            </a>
+            <a href=""><img src="./assets/img/dp3.jpg" alt="">
+                <p>Disney</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- -----------main page--------------- -->
+
+    <div class="container">
+
+        <div class="video-container">
+
+            <!-- <div class="video">
+                <img src="./assets/img/logo.png" class="thumbnail" alt="">
+                <div class="content">
+                    <img src="./assets/img/dp.jpg" class="channel-icon" alt="">
+                    <div class="info">
+                        <h4 class="title">Youtube clone |||| working in this project</h4>
+                        <p class="channel-name">Photography</p>
+                        <p>15k views 2 day</p>
+                    </div>
                 </div>
-            <!-- </div> -->
+            </div> -->
+
 
         </div>
 
+    </div>
+
+
+    <script src="./assets/js/app.js"></script>
 </body>
 
 </html>
