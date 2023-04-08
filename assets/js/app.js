@@ -1,7 +1,7 @@
 const menuIcon = document.querySelector(".menu-icon");
 const sidebar = document.querySelector(".sidebar");
 const container = document.querySelector(".container");
-const filters=document.querySelector('.filters');
+const filters = document.querySelector('.filters');
 
 const videoContainer = document.querySelector('.video-container');
 
@@ -25,14 +25,14 @@ const channel_url = BASE_URL + "/channels?"
 
 fetch(video_url + new URLSearchParams({
     key: API_KEY,
-    part: 'snippet',
+    part: 'snippet,contentDetails,statistics',
     chart: 'mostPopular',
-    maxResults: 150,
-    regionCode: 'IN'
+    maxResults: 200,
+    // regionCode: 'IN'
 
 })
 ).then(res => res.json()).then(data => {
-    console.log(data);
+    // console.log(data);
     data.items.forEach(item => {
         getChannelIcon(item);
 
@@ -48,13 +48,13 @@ const getChannelIcon = (video_data) => {
         part: 'snippet',
         id: video_data.snippet.channelId
     }))
-    .then(res => res.json())
-    .then(data => {
-        // console.log(data);
-        video_data.channelThumbnail = data.items[0].snippet.thumbnails.default;
-        // console.log(video_data);
-        makeVideoCard(video_data);
-    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            video_data.channelThumbnail = data.items[0].snippet.thumbnails.default;
+            // console.log(video_data);
+            makeVideoCard(video_data);
+        })
 }
 
 const makeVideoCard = (data) => {
@@ -65,21 +65,33 @@ const makeVideoCard = (data) => {
             <img src="${data.channelThumbnail.url}" class="channel-icon" alt="">
             <div class="info">
                 <h4 class="title">${data.snippet.title}</h4>
-                <p class="channel-name">${data.snippet.channelTitle}</p><i class="fa-sharp fa-solid fa-circle-check"></i>
-               
+                <p class="channel-name">${data.snippet.channelTitle} <i class="fa-sharp fa-solid fa-circle-check"></i></p>
+                <p>${numFormatter(data.statistics.viewCount)} views</p>
             </div>
         </div>
     </div>
     `
 }
 
+function numFormatter(num) {
+    if (num > 999 && num < 1000000) {
+        return (num / 1000).toFixed(1) + 'K';
+    }
+    else if (num > 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    }
+    else if (num < 900) {
+        return num;
+    }
+}
+
 // search bar
 
-const searchInput=document.querySelector('.search');
-const searchBtn=document.querySelector('.search-btn');
-let searchlink="https://www.youtube.com/results?search_query=";
-searchBtn.addEventListener('click',()=>{
-    if(searchInput.value.length){
-        location.href=searchlink + searchInput.value;
+const searchInput = document.querySelector('.search');
+const searchBtn = document.querySelector('.search-btn');
+let searchlink = "https://www.youtube.com/results?search_query=";
+searchBtn.addEventListener('click', () => {
+    if (searchInput.value.length) {
+        location.href = searchlink + searchInput.value;
     }
 })
