@@ -99,13 +99,14 @@ nav {
     align-items: center;
     margin-bottom: 20px;
     width: fit-content;
-    flex-wrap: wrap;
 }
 
 .shortcut-links a:first-child {
     color: #ed3833;
 }
-
+.shortcut-links a p{
+    font-size: .9rem;
+}
 .sidebar hr {
     border: 0;
     height: 1px;
@@ -158,7 +159,7 @@ nav {
 
 .filters {
     position: fixed;
-    left: 200px;
+    left: 15%;
     top: 55px;
     width: 100%;
     height: 75px;
@@ -186,7 +187,7 @@ nav {
     text-transform: capitalize;
     margin-right: 10px;
     color: #242424;
-    font-size: 14px;
+    font-size: .9rem;
     cursor: pointer;
 }
 
@@ -211,7 +212,7 @@ nav {
     grid-template-columns: repeat(4, 25%);
     grid-gap: 20px 10px;
     margin-top: 60px;
-    margin-right: 30px;
+    margin-right: 3%;
 }
 
 
@@ -223,7 +224,7 @@ nav {
 
 .thumbnail {
     width: 100%;
-    height: 150px;
+    height: 142px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -233,7 +234,6 @@ nav {
     height: 100%;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
 }
 
 .channel-icon {
@@ -268,45 +268,3 @@ nav {
     color: #686868;
 }
 
-
-
-
-/* ---------------media------------ */
-
-@media (max-width:900px) {
-    .menu-icon {
-        display: none;
-    }
-
-    .sidebar {
-        display: none;
-    }
-
-    .container,
-    .large-container {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .nav-right img {
-        display: none;
-    }
-
-    .nav-right .user-icon {
-        display: block;
-        width: 30px;
-    }
-
-    .nav-middle .search-box input {
-        width: 100px;
-
-    }
-
-    .nav-middle .mic-icon {
-        display: none;
-    }
-
-    .nav-left .logo {
-        width: 90px;
-    }
-}
